@@ -18,7 +18,11 @@ function App() {
       setPosts(data);
       setLoading(false);
     })
-  }, [])
+    .catch((error) => {
+      setError(error.message);
+      setLoading(false);
+    });
+  }, []);
 
   return (
     <div className="App">
