@@ -11,7 +11,7 @@ function App() {
       <header className='App-header'>
         <h1>Posts Viewer</h1>
         {loading && <p>Loading posts...</p>}
-        {}
+        {error && <p>Error: {error}</p>}
       </header>
     </div>
   );
