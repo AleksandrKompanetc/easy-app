@@ -30,6 +30,16 @@ function App() {
         <h1>Posts Viewer</h1>
         {loading && <p>Loading posts...</p>}
         {error && <p>Error: {error}</p>}
+        {!loading && !error && (
+          <ul className='posts-list'>
+            {posts.map((post) => (
+              <li key={post.id} className='post-item'>
+                <h2>{post.title}</h2>
+                <p>{post.body}</p>
+              </li>
+            ))}
+          </ul>
+        )}
       </header>
     </div>
   );
