@@ -39,3 +39,10 @@
   padding: 20px;
   text-align: center;
 }
+
+.App-header {
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
