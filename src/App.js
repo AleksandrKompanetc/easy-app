@@ -35,6 +35,24 @@ function App() {
     <div className="App">
       <header className='App-header'>
         <h1>Posts Viewer</h1>
+        <div className='new-post'>
+          <input 
+            type="text" 
+            placeholder='Post title'
+            value={newPost.title}
+            onChange={(e) => setNewPost({...newPost, title: e.target.value})}
+            className='new-post-input'
+          />
+          <textarea
+            placeholder='Post body'
+            value={newPost.body}
+            onChange={(e) => setNewPost({...newPost, body: e.target.value})}
+            className='new-post-textarea'
+          />
+          <button onClick={handleAddPost} className='add-post-button'>
+            Add Post
+          </button>
+        </div>
         <input 
           type="text"
           placeholder='Search posts...'
