@@ -25,6 +25,11 @@ function App() {
     });
   }, []);
 
+  const filteredPosts = posts.filter((post) => 
+    post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    post.name.toLowerCase().includes(searchQuery.toLowerCase())
+  )
+
   return (
     <div className="App">
       <header className='App-header'>
@@ -33,7 +38,7 @@ function App() {
         {error && <p>Error: {error}</p>}
         {!loading && !error && (
           <ul className='posts-list'>
-            {posts.map((post) => (
+            {filteredPosts.map((post) => (
               <li key={post.id} className='post-item'>
                 <h2>{post.title}</h2>
                 <p>{post.body}</p>
