@@ -27,7 +27,7 @@ function App() {
 
   const filteredPosts = posts.filter((post) => 
     post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    post.name.toLowerCase().includes(searchQuery.toLowerCase())
+    post.body.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
   return (
