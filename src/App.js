@@ -34,6 +34,13 @@ function App() {
     <div className="App">
       <header className='App-header'>
         <h1>Posts Viewer</h1>
+        <input 
+          type="text"
+          placeholder='Search posts...'
+          value={searchQuery} 
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className='search-input'
+        />
         {loading && <p>Loading posts...</p>}
         {error && <p>Error: {error}</p>}
         {!loading && !error && (
