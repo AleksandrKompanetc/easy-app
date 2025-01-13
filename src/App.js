@@ -6,6 +6,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [newPost, setNewPost] = useState({title: '', body: ''});
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
