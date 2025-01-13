@@ -26,6 +26,18 @@ function App() {
     });
   }, []);
 
+  const handleAddPost = () => {
+   if (newPost.title.trim() && newPost.body.trim()) {
+    const newPostObject = {
+      id: Date.now(),
+      title: newPost.title,
+      body: newPost.body,
+    }
+    setPosts([newPostObject, ...posts]);
+    setNewPost({title: '', body: ''});
+   } 
+  };
+
   const filteredPosts = posts.filter((post) => 
     post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     post.body.toLowerCase().includes(searchQuery.toLowerCase())
