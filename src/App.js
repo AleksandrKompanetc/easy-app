@@ -80,6 +80,12 @@ function App() {
               <li key={post.id} className='post-item'>
                 <h2>{post.title}</h2>
                 <p>{post.body}</p>
+                <button 
+                  onClick={() => handleDeletePost(post.id)}
+                  className='delete-post-button'  
+                >
+                  Delete
+                </button>
               </li>
             ))}
           </ul>
