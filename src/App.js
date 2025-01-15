@@ -101,6 +101,26 @@ function App() {
           <ul className='posts-list'>
             {filteredPosts.map((post) => (
               <li key={post.id} className='post-item'>
+                {editingPost && editingPost.id === post.id ? (
+                  <div className='edit-post'>
+                    <input 
+                      type="text"
+                      value={editingPost.title}
+                      onChange={(e) => setEditingPost({...editingPost, title: e.target.value})}
+                      className='edit-input styled-input'
+                    />
+                    <textarea 
+                      value={editingPost.body}
+                      onChange={(e) => setEditingPost({...editingPost, body: e.target.value})}
+                      classname='edit-textarea styled-input'
+                    />
+                    <button
+                      onClick={handleSaveEdit} 
+                      className='save-edit-button'>
+                      Save
+                    </button>
+                  </div>
+                ) : ()}
                 <h2>{post.title}</h2>
                 <p>{post.body}</p>
                 <button 
