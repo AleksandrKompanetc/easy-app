@@ -38,6 +38,13 @@ function App() {
    } 
   };
 
+  const handleDeletePost = (id) => {
+    const confirmed = window.confirm('Are you sure you want to delete this post?');
+    if (confirmed) {
+      setPosts(posts.filter((post) => post.id !== id));
+    }
+  };
+
   const filteredPosts = posts.filter((post) => 
     post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     post.body.toLowerCase().includes(searchQuery.toLowerCase())
