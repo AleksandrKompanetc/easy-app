@@ -46,6 +46,10 @@ function App() {
     }
   };
 
+  const handleEditPost = (post) => {
+    setEditingPost(post);
+  }
+
   const filteredPosts = posts.filter((post) => 
     post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     post.body.toLowerCase().includes(searchQuery.toLowerCase())
