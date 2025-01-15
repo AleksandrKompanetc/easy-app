@@ -7,6 +7,7 @@ function App() {
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [newPost, setNewPost] = useState({title: '', body: ''});
+  const [editingPost, setEditingPost] = useState(null);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
