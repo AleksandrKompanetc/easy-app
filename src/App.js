@@ -50,6 +50,17 @@ function App() {
     setEditingPost(post);
   }
 
+  const handleSaveEdit = () => {
+    if (editingPost.title.trim() && editingPost.body.trim()) {
+      setPosts(
+        posts.map((post) => 
+          post.id === editingPost.id ? {...post, ...editingPost} : post
+        )
+      )
+      setEditingPost(null);
+    }
+  }
+
   const filteredPosts = posts.filter((post) => 
     post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     post.body.toLowerCase().includes(searchQuery.toLowerCase())
