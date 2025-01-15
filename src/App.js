@@ -53,13 +53,13 @@ function App() {
             placeholder='Post title'
             value={newPost.title}
             onChange={(e) => setNewPost({...newPost, title: e.target.value})}
-            className='new-post-input'
+            className='new-post-input styled-input'
           />
           <textarea
             placeholder='Post body'
             value={newPost.body}
             onChange={(e) => setNewPost({...newPost, body: e.target.value})}
-            className='new-post-textarea'
+            className='new-post-textarea styled-input'
           />
           <button onClick={handleAddPost} className='add-post-button'>
             Add Post
@@ -70,7 +70,7 @@ function App() {
           placeholder='Search posts...'
           value={searchQuery} 
           onChange={(e) => setSearchQuery(e.target.value)}
-          className='search-input'
+          className='search-input styled-input'
         />
         {loading && <p>Loading posts...</p>}
         {error && <p>Error: {error}</p>}
