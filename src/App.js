@@ -75,6 +75,10 @@ function App() {
     }
   }
 
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  }
+
   const filteredPosts = posts.filter((post) =>
     post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     post.body.toLowerCase().includes(searchQuery.toLowerCase())
@@ -84,7 +88,7 @@ function App() {
     <div className="App">
       <header className='App-header'>
         <h1>Posts Viewer</h1>
-        <button onClick={toggletheme} className='theme-toggle'>
+        <button onClick={toggleTheme} className='theme-toggle'>
           Switch to {theme === 'light' ? 'Dark' : 'Light'} Theme
         </button>
         <div className='new-post'>
