@@ -10,32 +10,31 @@ function App() {
   const [editingPost, setEditingPost] = useState(null);
 
   useEffect(() => {
-    const savedPosts = localStorage.getItem('userPosts');
-    if (savedPosts) {
-      setPosts(JSON.parse(savedPosts));
-      setLoading(false);
-    } else {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json()
-      })
-      .then((data) => {
-        setPosts(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(error.message);
-        setLoading(false);
-      });
-    }
+    // const savedPosts = localStorage.getItem("userPosts");
+    // if (savedPosts) {
+    //   setPosts(JSON.parse(savedPosts));
+    //   setLoading(false);
+    // } else {
+      fetch("https://jsonplaceholder.typicode.com/posts")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setPosts(data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          setError(error.message);
+          setLoading(false);
+        });
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem('userPosts', JSON.stringify(posts));
-  }, [posts]);
+  // useEffect(() => {
+  //   localStorage.setItem("userPosts", JSON.stringify(posts));
+  // }, [posts]);
 
   const handleAddPost = () => {
     if (newPost.title.trim() && newPost.body.trim()) {
