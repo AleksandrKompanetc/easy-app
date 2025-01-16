@@ -84,6 +84,9 @@ function App() {
     <div className="App">
       <header className='App-header'>
         <h1>Posts Viewer</h1>
+        <button onClick={toggletheme} className='theme-toggle'>
+          Switch to {theme === 'light' ? 'Dark' : 'Light'} Theme
+        </button>
         <div className='new-post'>
           <input
             type="text"
