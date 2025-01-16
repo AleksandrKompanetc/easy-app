@@ -8,6 +8,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [newPost, setNewPost] = useState({ title: '', body: '' });
   const [editingPost, setEditingPost] = useState(null);
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
     // const savedPosts = localStorage.getItem("userPosts");
