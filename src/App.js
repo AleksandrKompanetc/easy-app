@@ -33,6 +33,10 @@ function App() {
         });
   }, []);
 
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
   // useEffect(() => {
   //   localStorage.setItem("userPosts", JSON.stringify(posts));
   // }, [posts]);
