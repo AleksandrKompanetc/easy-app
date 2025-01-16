@@ -33,6 +33,10 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('userPosts', JSON.stringify(posts));
+  }, [posts]);
+
   const handleAddPost = () => {
     if (newPost.title.trim() && newPost.body.trim()) {
       const newPostObject = {
