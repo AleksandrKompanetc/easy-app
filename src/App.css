@@ -109,6 +109,22 @@
   background-color: #e60000;
 }
 
+.edit-post-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffa500;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.edit-post-button:hover {
+  background-color: #cc8400;
+}
+
 .posts-list {
   list-style: none;
   padding: 0;
