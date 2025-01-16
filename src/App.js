@@ -10,6 +10,11 @@ function App() {
   const [editingPost, setEditingPost] = useState(null);
 
   useEffect(() => {
+    const savedPosts = localStorage.getItem('userPosts');
+    if (savedPosts) {
+      setPosts(JSON.parse(savedPosts));
+      setLoading(false);
+    } else {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => {
         if (!response.ok) {
@@ -25,6 +30,7 @@ function App() {
         setError(error.message);
         setLoading(false);
       });
+    }
   }, []);
 
   const handleAddPost = () => {
