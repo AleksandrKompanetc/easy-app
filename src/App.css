@@ -125,6 +125,22 @@
   background-color: #cc8400;
 }
 
+.save-edit-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.save-edit-button:hover {
+  background-color: #388e3c;
+}
+
 .posts-list {
   list-style: none;
   padding: 0;
